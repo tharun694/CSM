@@ -30,10 +30,6 @@ public class UserController {
         this.model=model;
     }
 
-    @ExceptionHandler (ResourceNotFoundException.class)
-public ResponseEntity<ErrorResponse>HandleNotFound(){
-
-}    
 
     @GetMapping ("/greet")
     public ResponseEntity<String> message(){

@@ -1,0 +1,27 @@
+services:
+
+  postgres:
+    image: postgres
+    container_name: csm-postgres
+    environment:
+      POSTGRES_DB: csm
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: csm@123
+    ports:
+      - "5431:5432"
+
+  app:
+    build: .
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+
+
+
+
+
+
+
+
+
