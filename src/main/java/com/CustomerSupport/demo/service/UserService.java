@@ -33,17 +33,15 @@ public class UserService {
     }
 
     public void  adduser(@RequestBody User user) {
-    User savedUser= repo.save(user);
-    String email=savedUser.getEmail();
-    
+    String email=user.getEmail();
     String subject="Customer Support Agent";
-    String body=model.call(savedUser.getIssue()+"  generate clean ,short and powerful, no lines,no emojis,only text and links");
+    String body=model.call(user.getIssue()+"  generate clean ,short and powerful, no lines,no emojis,only text and links");
     Map<String ,Object> payload= Map.of(
             "sender" , Map.of(
                     "name", "Tharun",
                     "email","tharunprakash999@gmail.com"),
             "to",List.of(Map.of("email",email)),
-            "subject","CustomerSupportAgent",
+            "subject",subject,
             "htmlContent",body
     );
 
@@ -52,9 +50,9 @@ public class UserService {
             .header("Content-Type" ,"application/json")
             .body(payload)
             .retrieve().toBodilessEntity();
-
+user.setResponse(body);
+repo.save(user);
     }
-    
 
    
 
