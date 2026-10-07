@@ -35,7 +35,7 @@ public class UserService {
     public void  adduser(@RequestBody User user) {
     String email=user.getEmail();
     String subject="Customer Support Agent";
-    String body=model.call(user.getIssue()+"  generate clean ,short and powerful, no lines,no emojis,only text and links");
+    String body=model.call(user.getIssue()+"  generate clean ,short and powerful, no lines,no emojis,only text and links,steps by steps bullet points need to be  mention.");
     Map<String ,Object> payload= Map.of(
             "sender" , Map.of(
                     "name", "Tharun",
