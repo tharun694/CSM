@@ -15,5 +15,6 @@ private Long id;
 private String name;
 private String email;
 private String issue;
+@Lob
 private String response;
 }
