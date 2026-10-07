@@ -41,10 +41,7 @@ public class UserController {
         service.adduser(user);
         return new  ResponseEntity(HttpStatus.CREATED);
     }
-    // @GetMapping ("/{text}")
-    // public String getResponse( @PathVariable String text){
-    //     return model.call(text);
-    // }
+
    
 
 }
