@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor 
 @Entity 
 @Data
-@Table(name="users")
+@Table(name="clients")
 public class User {
   @Id 
 @GeneratedValue (strategy = GenerationType.IDENTITY)
@@ -15,6 +15,6 @@ private Long id;
 private String name;
 private String email;
 private String issue;
-@Lob
+@Column(columnDefinition = "TEXT")
 private String response;
 }
