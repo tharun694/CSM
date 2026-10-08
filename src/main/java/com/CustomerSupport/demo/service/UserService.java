@@ -24,8 +24,8 @@ public class UserService {
     OpenAiChatModel model;
 
   private final RestClientConfig client;
-    //@Value("${brevo_api_key}")
-    String brevo_api_key ;
+    @Value("${brevo_api_key}")
+    String brevo_api_key;
 
 
 
